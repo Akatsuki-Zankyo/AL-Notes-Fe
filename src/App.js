@@ -1,19 +1,26 @@
 import React from 'react';
-import { Button, message } from 'antd';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home'; // 导入App组件
+import About from './components/About'; // 导入About组件
+import List from './components/List'; // 导入Inbox组件
 
 function App() {
-  function clickMe() {
-    message.info('点击了按钮');
-  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <Button type="primary" onClick={clickMe}>
-          点我试试
-        </Button>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className="nav">
+          <Link to="/">Home</Link> | <Link to="/About">About</Link> |
+          <Link to="/List"> List</Link>　　
+        </div>
+
+        <body>
+          <Route exact path="/" component={Home} />
+          <Route path="/About" component={About} />
+          <Route path="/List" component={List} />
+        </body>
+      </div>
+    </Router>
   );
 }
 
