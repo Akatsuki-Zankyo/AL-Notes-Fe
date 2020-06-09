@@ -9,12 +9,21 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="nav">
-          <Link to="/">Home</Link> | <Link to="/About">About</Link> |
-          <Link to="/List"> List</Link>　　
+        <div className="App-nav">
+          <div className="App-link">
+            <Link className="link" to="/">
+              主页
+            </Link>
+            <Link className="link" to="/List">
+              列表
+            </Link>
+            <Link className="link" to="/About">
+              关于
+            </Link>
+          </div>
         </div>
 
-        <div>
+        <div className="App-content">
           <Route exact path="/" component={Home} />
           <Route path="/About" component={About} />
           <Route path="/List" component={List} />
