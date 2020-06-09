@@ -14,11 +14,11 @@ function App() {
           <Link to="/List"> List</Link>　　
         </div>
 
-        <body>
+        <div>
           <Route exact path="/" component={Home} />
           <Route path="/About" component={About} />
           <Route path="/List" component={List} />
-        </body>
+        </div>
       </div>
     </Router>
   );
